@@ -1,0 +1,68 @@
+<h2>Buy Insurance</h2>
+
+<div *ngIf="selectedPlan">
+  <h3>{{ selectedPlan.planName }}</h3>
+  <p>Base Amount: ₹{{ selectedPlan.baseAmt }}</p>
+</div>
+
+<hr>
+
+<h3>User Details</h3>
+
+<label>Name:</label>
+<input type="text" [(ngModel)]="name" (input)="checkFormValidity()">
+
+
+<label>Age:</label>
+<input type="number" [(ngModel)]="age" (input)="checkFormValidity(); calculatePremium()">
+
+<label>City:</label>
+<input type="text" [(ngModel)]="city"><br><br>
+
+<label>Phone:</label>
+<input type="text" [(ngModel)]="phone" (input)="checkFormValidity()">
+
+<label>Email:</label>
+<input type="email" [(ngModel)]="email" (input)="checkFormValidity()">
+
+<label>
+  <input type="checkbox" [(ngModel)]="hasHealthIssue" (change)="calculatePremium()">
+  Do you have any health issues?
+</label>
+
+<hr>
+
+<h3>Premium Amount: ₹{{ premiumAmount }}</h3>
+
+
+
+
+<hr>
+
+<h3>Payment Details</h3>
+
+<label>Payment Mode:</label>
+<select [(ngModel)]="paymentMode" (change)="checkFormValidity()">
+  <option value="">Select</option>
+  <option value="Credit Card">Credit Card</option>
+  <option value="Debit Card">Debit Card</option>
+</select><br><br>
+
+<label>Card Number:</label>
+<input type="text" [(ngModel)]="cardNumber" (input)="checkFormValidity()">
+
+<label>Payment Frequency:</label>
+<select [(ngModel)]="paymentFreq" (change)="checkFormValidity()">
+  <option value="">Select</option>
+  <option value="Monthly">Monthly</option>
+  <option value="Yearly">Yearly</option>
+</select><br><br>
+
+<button type="button" 
+        (click)="buyNow()" 
+        [disabled]="!isFormValid">
+  Buy Now
+</button>
+
+
+<h3 style="color: green">{{ successMessage }}</h3>

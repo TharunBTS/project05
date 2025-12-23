@@ -1,0 +1,13 @@
+<h2>Available Insurance Plans</h2>
+
+<div *ngFor="let plan of plans" style="border:1px solid #ccc; padding:10px; margin:10px">
+  <h3>{{ plan.planName }}</h3>
+  <p>{{ plan.description }}</p>
+  <p><b>Base Amount:</b> ₹{{ plan.baseAmt }}</p>
+  <p><b>Validity:</b> {{ plan.validity }} days</p>
+
+    <button type="button" [routerLink]="['/buy', plan.planId]">
+    Select Plan
+    </button>
+
+</div>

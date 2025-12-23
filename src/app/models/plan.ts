@@ -1,0 +1,7 @@
+export class Plan {
+  planId!: number;
+  planName!: string;
+  description!: string;
+  baseAmt!: number;
+  validity!: number;
+}

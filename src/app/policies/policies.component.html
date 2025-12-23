@@ -1,0 +1,16 @@
+<h2>My Policies</h2>
+
+<div *ngIf="policies.length === 0">
+  No policies purchased yet.
+</div>
+
+<div *ngFor="let policy of policies" 
+     style="border:1px solid #ccc; padding:10px; margin:10px">
+
+  <p><b>Policy Name:</b> {{ policy.planName }}</p>
+  <p><b>Valid Till:</b> {{ policy.validity }} days</p>
+  <p><b>Premium Amount:</b> ₹{{ policy.premiumAmt }}</p>
+  <p><b>Payment Mode:</b> {{ policy.paymentMode }}</p>
+  <p><b>Payment Frequency:</b> {{ policy.paymentFreq }}</p>
+
+</div>
