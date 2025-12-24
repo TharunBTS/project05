@@ -1,2 +1,62 @@
 <h2>Welcome to Raindrops Insurance</h2>
 <p>Buy health insurance plans easily.</p>
+<!-- HERO SECTION -->
+<div class="container py-5">
+  <div class="row align-items-center">
+
+    <!-- LEFT TEXT -->
+    <div class="col-md-6">
+      <h6 class="text-primary">Get the best</h6>
+      <h1 class="fw-bold display-5">
+        Health <br> Insurance
+      </h1>
+      <p class="text-muted">
+        Maximum coverage at lowest price
+      </p>
+
+      <button class="btn btn-primary mt-3"
+              routerLink="/plans">
+        Browse Plans
+      </button>
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="col-md-6 text-center">
+      <img
+        src="assets/insurance-family.png"
+        class="img-fluid"
+        alt="Insurance">
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light px-4">
+  <a class="navbar-brand fw-bold" routerLink="/">
+    Raindrops Insurance
+  </a>
+
+  <div class="ms-auto">
+    <a class="nav-link d-inline mx-2" routerLink="/home">Home</a>
+    <a class="nav-link d-inline mx-2" routerLink="/plans">Plans</a>
+    <a class="nav-link d-inline mx-2" routerLink="/about">About</a>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+
+
+
+
+
+<footer class="bg-dark text-white text-center py-3 mt-5">
+  © 2023 Raindrops Insurance Inc. | All rights reserved
+</footer>
